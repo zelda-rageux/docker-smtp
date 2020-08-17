@@ -27,7 +27,6 @@ opts=(
 	dc_local_interfaces "[${BIND_IP:-0.0.0.0}]:${PORT:-25} ; [${BIND_IP6:-::0}]:${PORT:-25}"
 	dc_other_hostnames "${OTHER_HOSTNAMES}"
 	dc_relay_nets "$(ip addr show dev eth0 | awk '$1 == "inet" { print $2 }' | xargs | sed 's/ /:/g')${RELAY_NETWORKS}"
-	helo_accept_junk_hosts '!*'
 	helo_allow_chars '_'
 )
 
