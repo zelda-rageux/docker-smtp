@@ -11,6 +11,8 @@ RUN apt-get update && \
 COPY entrypoint.sh /bin/
 COPY set-exim4-update-conf /bin/
 
+COPY update-exim4.conf.conf /etc/exim4/
+
 RUN chmod a+x /bin/entrypoint.sh && \
     chmod a+x /bin/set-exim4-update-conf
 
